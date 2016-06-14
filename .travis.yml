@@ -23,9 +23,6 @@ addons:
       description: "3D game engine"
     notification_email: mikulas.florek@gamedev.sk
     build_command_prepend:
-        - cd projects
-        - sh genie_linux_gcc.sh
-        - cd tmp/gcc
     build_command: make config=debug64
     branch_pattern: coverity_scan
 
