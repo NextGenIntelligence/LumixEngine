@@ -18,6 +18,9 @@ before_script:
 script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make config=debug64 ; fi
    
 addons:
+  apt:
+    packages:
+      - ca-certificates
   coverity_scan:
     project:
       name: "nem0/LumixEngine"
