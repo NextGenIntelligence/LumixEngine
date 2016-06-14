@@ -10,12 +10,13 @@ language: cpp
 compiler: gcc
 git:
     depth: 1
+before_install:
+  - curl -s http://gamedev.sk/files/coverity.cer | sudo tee -a /etc/ssl/certs/ca-certificates.crt
 before_script:
     - sudo apt-get install ca-certificates
     - cd projects
     - sh genie_linux_gcc.sh
     - cd tmp/gcc
-    - sh ../../coverity.sh
 script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make config=debug64 ; fi
    
 addons:
