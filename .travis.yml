@@ -14,6 +14,7 @@ before_script:
     - cd projects
     - sh genie_linux_gcc.sh
     - cd tmp/gcc
+    - sh ../../coverity.sh
 script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make config=debug64 ; fi
    
 addons:
@@ -22,7 +23,7 @@ addons:
       name: "nem0/LumixEngine"
       description: "3D game engine"
     notification_email: mikulas.florek@gamedev.sk
-    build_command_prepend: sh ../../coverity.sh
+    build_command_prepend: 
     build_command: make config=debug64
     branch_pattern: coverity_scan
 
