@@ -11,6 +11,7 @@ compiler: gcc
 git:
     depth: 1
 before_script:
+    - sudo apt-get install ca-certificates
     - cd projects
     - sh genie_linux_gcc.sh
     - cd tmp/gcc
